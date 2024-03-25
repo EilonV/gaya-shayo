@@ -1,0 +1,53 @@
+.home {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+    .expandable {
+        width: 100%;
+        flex-shrink: 5;
+        transition: 0.5s;
+        display: flex;
+
+        h1 {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            padding: 20px 38px;
+            line-height: $h1;
+            &:not(.first){
+                border-width: 0px 5px 0px 0px;
+                border-color: black;
+                border-style: solid;
+            }
+            pointer-events: none;
+            font-family: Colabero;
+        }
+
+        &.expanded {
+            flex-shrink: 1;
+            background: pink;
+        }
+
+        .expandable-data {
+            width: 100%;
+            display: none;
+
+            p {
+                width: 100%;
+
+            }
+        }
+
+        &:nth-child(1) {}
+
+        &:nth-child(2) {}
+
+        &:nth-child(3) {}
+
+
+
+        background: salmon;
+    }
+
+
+}
