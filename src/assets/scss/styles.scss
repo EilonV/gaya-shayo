@@ -9,6 +9,8 @@
 @import 'basics/_helpers';
 
 // CMPS
-
+@import 'components/_home-cmp.scss';
+@import 'components/_projects.scss';
+@import 'components/_about.scss';
 // VIEWS
 @import 'views/_home.scss';
