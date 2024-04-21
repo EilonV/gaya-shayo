@@ -8,7 +8,6 @@
         flex-shrink: 5;
         transition: 0.5s;
         display: flex;
-        background: salmon;
         border-width: 0px 0px 0px 3px;
         border-color: black;
         border-style: solid;
@@ -28,13 +27,19 @@
             pointer-events: none;
             font-family: Colabero;
             text-transform: uppercase;
+            transition: 0.3s;
+            animation: show 1s forwards;
         }
 
         .expandable-data {
             width: 100%;
-            display: none;
             opacity: 0;
             flex-direction: column;
+
+            // test
+            display: flex;
+            position: absolute;
+            visibility: hidden;
 
             .header {
                 display: flex;
@@ -59,7 +64,6 @@
                 align-items: flex-start;
                 padding: 0 145px;
 
-
                 p {
                     // font-family: anona, sans-serif;
                 }
@@ -69,19 +73,13 @@
 
         &.expanded {
             flex-shrink: 1;
-            background: pink;
 
             h1 {
-                // visibility: hidden;
-                font-size: 0;
-                width: 0;
-                animation: hide 0.5s 0s 1 forwards;
-
+                animation: hide 0.1s 0s 1 forwards;
             }
 
             .expandable-data {
-                display: flex;
-                animation: show 1s 0.5s forwards;
+                animation: flexs 1s 0.5s forwards;
             }
         }
     }
@@ -99,6 +97,19 @@
     @keyframes hide {
         to {
             display: none;
+        }
+    }
+
+    @keyframes flexs {
+        10% {
+            position: static;
+            visibility: visible;
+        }
+
+        100% {
+            opacity: 1;
+            position: static;
+            visibility: visible;
         }
     }
 }
